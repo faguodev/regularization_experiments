@@ -1,0 +1,13 @@
+project(task,person)
+courseTA(course,person)
+student(person)
+courseProf(course,person)
+faculty(person)
+
+((!courseTA(x,y) v courseProf(z,y)) v student(y))
+((!project(x,y) v !student(y)) v courseProf(z,y))
+((!faculty(x) v !student(x)) v courseProf(y,x))
+((!project(x,y) v faculty(y)) v project(z,y))
+(!project(x,y) v student(y))
+((!courseProf(x,y) v courseTA(x,y)) v student(y))
+((!courseProf(x,y) v faculty(y)) v student(y))
