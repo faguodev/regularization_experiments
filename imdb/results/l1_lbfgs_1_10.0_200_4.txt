@@ -1,0 +1,19 @@
+Reading model using MLN syntax.
+Starting to run inference
+Inference took 0 ms
+Reading model structure using MLN syntax.
+-4.087498091244023 workedUnder(x,y)
+0.6986525132589486 male(x)
+0.0828754998078195 movie(x,y)
+-1.064665553909676 genre(x,y)
+-0.5762938487994448 actor(x)
+0.5762938488024422 director(x)
+1.49914438750426 (!movie(x,y) v !movie(z,y))
+0.940313218015522 (!workedUnder(x,y) v !male(y))
+-0.02481696289856389 (movie(x,y) v !movie(z,y))
+-0.028016013453541835 (((workedUnder(x,y) v director(y)) v genre(y,z)) v !actor(y))
+Initializing counts took 0.101s
+Compiling circuits took 1.085s
+db: DatabaseLikelihood(db1842403746,Vector(edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@5f9d29c4, edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@d374c01, edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@300566e, edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@68769265, edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@5e9355a6, edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@69f35d31, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@68c1d547, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@34788780, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@7002dacc, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@36b1b28),edu.ucla.cs.starai.forclift.inference.PrecompiledCNFCircuit@65669def)
+likelihood = 0.0
+loglikelihood = -3340.5603327298595

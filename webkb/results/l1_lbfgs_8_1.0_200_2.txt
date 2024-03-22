@@ -1,0 +1,21 @@
+Reading model using MLN syntax.
+Starting to run inference
+Inference took 0 ms
+Reading model structure using MLN syntax.
+-1.934738528222985 project(x,y)
+-4.533418576120623 courseTA(x,y)
+1.9019557382836896 faculty(x)
+-6.161839060885043 courseProf(x,y)
+4.227134153399916 student(x)
+0.3926494170501432 ((!courseTA(x,y) v courseProf(z,y)) v student(y))
+0.09585991527533366 ((!project(x,y) v !student(y)) v courseProf(z,y))
+0.6098679603626738 ((!faculty(x) v !student(x)) v courseProf(y,x))
+0.016326124209270383 ((!project(x,y) v faculty(y)) v project(z,y))
+1.182819142475071 (!project(x,y) v student(y))
+-3.5021032818191307 ((!courseProf(x,y) v courseTA(x,y)) v student(y))
+0.6742748259215614 ((!courseProf(x,y) v faculty(y)) v student(y))
+Initializing counts took 0.123s
+Compiling circuits took 2.755s
+db: DatabaseLikelihood(db874011738,Vector(edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@4bd571ca, edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@4046b148, edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@d3453c4, edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@7bb824b4, edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@1b035128, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@6e3a7ff1, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@413fab81, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@7b18aa96, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@7a133ecc, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@476b1388, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@7b34db47, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@45c682ad),edu.ucla.cs.starai.forclift.inference.PrecompiledCNFCircuit@26402187)
+likelihood = 0.0
+loglikelihood = -1720.6475772057893

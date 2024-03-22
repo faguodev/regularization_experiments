@@ -1,0 +1,14 @@
+Reading model using MLN syntax.
+Starting to run inference
+Inference took 0 ms
+Reading model structure using MLN syntax.
+0.7820633492224243 Smokes(x)
+-1.6208172881322969 Cancer(x)
+-0.1340858934214318 Friends(x,y)
+1.0994874728970032 (!Smokes(x) v Cancer(x))
+0.33478550848628963 ((!Smokes(x) v !Friends(x,y)) v Smokes(y))
+Initializing counts took 1.28s
+Compiling circuits took 0.548s
+db: DatabaseLikelihood(db414634945,Vector(edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@422ab737, edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@3fe512d2, edu.ucla.cs.starai.forclift.learning.LearningUnitClause$$anon$1@3fde8f7c, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@11d86b9d, edu.ucla.cs.starai.forclift.learning.LearningMLNFormula$$anon$2@6dce59e),edu.ucla.cs.starai.forclift.inference.PrecompiledCNFCircuit@11381415)
+likelihood = 0.0
+loglikelihood = -111948.94457863885
