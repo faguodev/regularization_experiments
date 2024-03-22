@@ -12,9 +12,9 @@ def parse_loglikelihood(file_path):
                 return float(value)
     return None
 
-def aggregate_statistics(results_folder, regularization, n, m, lambda_val=None, method=None, target=None, n_min=1):
+def aggregate_statistics(results_folder, regularization, n, m, lambda_val=None, method=None, target=None):
     loglikelihoods = []
-    for i in range(n_min, n + 1):
+    for i in range(1, n + 1):
         if target == 'all':
             file_name = f"{regularization}_{method}"
             file_name += f"_{i}"
@@ -44,28 +44,24 @@ def aggregate_statistics(results_folder, regularization, n, m, lambda_val=None, 
         return None, None, []
 
 def find_best_lambda(results_folder, reg, method, target_splits, lambda_values, n, m):
-    validation_min = int(n * 0.8) + 1
-    test_max = int(n * 0.8)
-    # Test on 20% validation set
     means = {}
     std_devs = {}
 
     for lambda_val in lambda_values:
-        means[lambda_val] = []
-        std_devs[lambda_val] = []
-        
-        for target_split in target_splits:
-            mean, std_dev, _ = aggregate_statistics(results_folder, reg, lambda_val=lambda_val, method=method, target=target_split, n=n, m=m, n_min=validation_min)
-            means[lambda_val].append(mean)
-            std_devs[lambda_val].append(std_dev)
+        mean, std_dev, _ = aggregate_statistics(results_folder, reg, lambda_val=lambda_val, method=method, target=target_splits[0], n=n, m=m) #, n_min=validation_min
+        means[lambda_val] = mean
+        std_devs[lambda_val] = std_dev
 
-    best_lambda = max(means, key=lambda x: np.mean(means[x]))
+    best_lambda = max(means, key=means.get)
 
-    # With the best lambda, calculate the mean and std dev for the test set
     best_means = []
     best_std_devs = []
-    for target_split in target_splits:
-        mean, std_dev, _ = aggregate_statistics(results_folder, reg, lambda_val=best_lambda, method=method, target=target_split, n=test_max, m=m)
+
+    best_means.append(means[best_lambda])
+    best_std_devs.append(std_devs[best_lambda])
+
+    for target_split in target_splits[1:]:
+        mean, std_dev, _ = aggregate_statistics(results_folder, reg, lambda_val=best_lambda, method=method, target=target_split, n=n, m=m) #, n=test_max
         best_means.append(mean)
         best_std_devs.append(std_dev)    
 
