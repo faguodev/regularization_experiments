@@ -8,6 +8,8 @@ Here is is explanation of the files, code, and usage.
 
 The folders **smoking**, **imdb**, **webkb** and **nations** contain the full dataset as well as the formulas for the to-be-trained MLN.
 
+Each folder also contains a results folder which contains our results. In a result file one can also see the trained MLNs with the weights. The .zip file contains these same results. The folds and learned_mlns folders are necessary to run the experiments.
+
 ## Utility Scripts
 
 **scripts/smokerDatasetCreation.py** creates the dataset for Friends & Smokers (FS).  
