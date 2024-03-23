@@ -1,0 +1,11 @@
+
+Cancer(person)
+Friends(person,person)
+Smokes(person)
+
+6.816390319501893 Smokes(x)
+-7.509550187559987 Cancer(x)
+-0.9517093618074622 Friends(x,y)
+7.508732620514635 (!Smokes(x) v Cancer(x))
+0.49043051778990354 (!Friends(x,y) v (!Smokes(x) v Smokes(y)))
+0.49043051779313185 (!Friends(x,y) v (!Smokes(y) v Smokes(x)))

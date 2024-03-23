@@ -1,0 +1,35 @@
+*.nnf
+/target
+*~
+/bin
+*.class
+*.log
+
+# hide external dependency directory
+external/*
+
+# hide distribution output
+forclift-*
+
+# sbt specific
+.cache
+.history
+.lib/
+dist/*
+target/
+lib_managed/
+src_managed/
+project/boot/
+project/plugins/project/
+
+# Scala-IDE specific
+.scala_dependencies
+.worksheet
+.settings
+.project
+.cache-main
+.cache-tests
+.classpath
+.vscode
+.metals
+.scala-build

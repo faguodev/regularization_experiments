@@ -20,7 +20,9 @@ Parameters about the resulting dataset can be edited and the script can be calle
 ## Weight Learning
 
 To learn the weights we worked with the Forclift software by Van den Broek et al. It is available on github: [https://github.com/UCLA-StarAI/Forclift](https://github.com/UCLA-StarAI/Forclift)    
-We added slight adjustments to include L1 and L2 regularization in the training process, the resulting compiled jar files in the jars folder are used during training of the MLNs.
+We added slight adjustments to include L1 and L2 regularization in the training process, the resulting compiled jar files in the jars folder are used during training of the MLNs.  
+For the sake of completeness, we also added a copy of the Forclift software with our adaptations in the 'Forclift' folder.
+
 The formulas for the Markov Logic Networks, except for the Nations formulas, where we used a handcrafted MLN, were also taken from Van den Broek et al.
 
 Our own implementation of Domain-Size Aware Markov Logic Networks can be found in the damlnSmoking.py, damlnImdb.py, damlnWebkb.py and damlnNations.py files, which calculate the scaling factor based on the test set and downscale the weights learned by the regular generative weight learning process accordingly. 
